@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <td>CategoryId</td>
+        <td>CategoryName</td>
+        <td>Description</td>
+
+    </tr>
+
+    @foreach (var c in ViewBag.ListOfCategories)
+    {
+        <tr>
+            <td>@c.CategoryId</td>
+            <td>@c.CategoryName</td>
+            <td>@c.Description</td>
+
+        </tr>
+    }
+
+
+
+
+</table>

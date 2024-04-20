@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <td>SupplierId</td>
+        <td>CompanyName</td>
+        <td>ContactName</td>
+        <td>ContactTitle</td>
+        <td>Address</td>
+        <td>City</td>
+        <td>Region</td>
+        <td>PostalCode</td>
+        <td>Country</td>
+        <td>Phone</td>
+        <td>Fax</td>
+        <td>HomePage</td>
+
+
+    </tr>
+
+    @foreach (var s in ViewBag.ListOfSuppliers)
+    {
+        <tr>
+            <td>@s.SupplierId</td>
+            <td>@s.CompanyName</td>
+            <td>@s.ContactName</td>
+            <td>@s.ContactTitle</td>
+            <td>@s.Address</td>
+            <td>@s.City</td>
+            <td>@s.Region</td>
+            <td>@s.PostalCode</td>
+            <td>@s.Country</td>
+            <td>@s.Phone</td>
+            <td>@s.Fax</td>
+            <td>@s.HomePage</td>
+        </tr>
+    }
+
+
+
+
+</table>

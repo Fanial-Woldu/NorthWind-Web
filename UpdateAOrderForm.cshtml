@@ -1,0 +1,118 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Update a Order </h2>
+@*<h3>Primary Key: @ViewBag.ListOfOrder[0].OrderId</h3>*@
+
+<form action="UpdateAOrder" method="Post">
+
+    <input type="hidden" name="aOrderId" value="@ViewBag.ListOfOrders[0].OrderId" />
+
+
+
+    Customer Id <br />
+    @*<input type="text" id="this is for js" class="this is for your css" name="supplierId" />*@
+    
+    <select name="aCustomerId">
+
+        @foreach (var c in ViewBag.ListOfCustomers)
+        {
+            @if (c.CustomerId == @ViewBag.ListOfOrders[0].CustomerId)
+            {
+                <option value="@c.CustomerId" SELECTED>@c.CustomerId @c.CompanyName</option>
+
+            }
+            else
+            {
+                <option value="@c.CustomerId">@c.CustomerId @c.CompanyName</option>
+
+            }
+        }
+    </select>
+    
+
+
+
+     <br /><br />
+
+    Employee Id
+
+
+    <br />
+
+
+    <select name="aEmployeeId">
+
+        @foreach (var e in ViewBag.ListOfEmployees)
+        {
+            @if (e.EmployeeId == @ViewBag.ListOfOrders[0].EmployeeId)
+            {
+                <option value="@e.EmployeeId" SELECTED>@e.EmployeeId @e.FirstName @e.LastName</option>
+
+            }
+            else
+            {
+                <option value="@e.EmployeeId">@e.EmployeeId @e.FirstName @e.LastName</option>
+
+            }
+        }
+    </select>
+    
+
+    @*
+    Category Id <br />
+
+
+    <select name="categoryId">
+
+    @foreach (var c in ViewBag.ListOfCategories)
+    {
+    <option value="@c.CategoryId ">@c.CategoryName</option>
+    }
+    </select><br /><br />
+    *@
+
+
+    Order Date <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aOrderDate" value ="@ViewBag.ListOfOrders[0].OrderDate"/><br />
+
+    Reqired Date <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aRequiredDate" value="@ViewBag.ListOfOrders[0].RequiredDate" /><br />
+
+    Shipped Date <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShippedDate" value="@ViewBag.ListOfOrders[0].ShippedDate "/><br />
+
+    Ship Via <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipVia" value="@ViewBag.ListOfOrders[0].ShipVia " /><br />
+
+    Freight <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aFreight" value="@ViewBag.ListOfOrders[0].Freight " /><br />
+
+    Ship Name <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipName" value="@ViewBag.ListOfOrders[0].ShipName " /><br />
+
+    Ship Address <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipAddress" value="@ViewBag.ListOfOrders[0].ShipAddress " /><br />
+
+    Ship City <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipCity" value="@ViewBag.ListOfOrders[0].ShipCity " /><br />
+
+    Ship Region <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipRegion" value="@ViewBag.ListOfOrders[0].ShipRegion " /><br />
+
+    Ship Postal Code <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipPostalCode" value="@ViewBag.ListOfOrders[0].ShipPostalCode " /><br />
+
+    Ship Country <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aShipCountry" value="@ViewBag.ListOfOrders[0].ShipCountry " /><br />
+
+    <input type="submit" />     <input type="reset" />
+
+
+
+
+
+</form>

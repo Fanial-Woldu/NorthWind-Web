@@ -1,0 +1,48 @@
+﻿<h2>Update Order Detail</h2>
+<br />
+<br />
+
+
+<h3>Order ID: @ViewBag.ListOfOrderDetails[0].OrderId</h3>
+<br />
+
+<h3>Product ID: @ViewBag.ListOfOrderDetails[0].ProductId</h3>
+
+
+<form asp-action="UpdateAnOrderDetail" method="Post">
+
+    <input type="hidden" name="aOrderId" value="@ViewBag.ListOfOrderDetails[0].OrderId" />
+
+    <br /><br />
+
+    <input type="hidden" name="aProductId" value="@ViewBag.ListOfOrderDetails[0].ProductId" />
+    <br /><br />
+
+
+
+    Unit Price <br />
+    <input type="text" id="this4 is for js" class="this is for your css" name="aUnitPrice" value="@ViewBag.ListOfOrderDetails[0].UnitPrice" /> <br />
+    <br /><br />
+
+
+    Quantity <br />
+    <input type="text" id="this3 is for js" class="this is for your css" name="aQuantity" value="@ViewBag.ListOfOrderDetails[0].Quantity" /> <br />
+
+    <br /><br />
+
+
+    Discount <br />
+    <input type="text" id="this3 is for js" class="this is for your css" name="aDiscount" value="@ViewBag.ListOfOrderDetails[0].Discount" /> <br />
+
+
+    <br /><br />
+
+
+
+
+
+
+    <input type="submit" />    <input type="reset" />
+
+
+</form>

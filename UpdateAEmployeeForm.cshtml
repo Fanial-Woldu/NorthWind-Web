@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form action="UpdateAEmployee" method="Post">
+
+    <input type="hidden" name="aEmployeeId" value="@ViewBag.ListOfEmployees[0].EmployeeId" />
+
+    LastName <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aLastName" value="@ViewBag.ListOfEmployees[0].LastName" /><br />
+    First Name <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aFirstName" value="@ViewBag.ListOfEmployees[0].FirstName" /><br />
+    Title <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aTitle" value="@ViewBag.ListOfEmployees[0].Title" /><br />
+    TitleOfCourtesy <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aTitleOfCourtesy" value="@ViewBag.ListOfEmployees[0].TitleOfCourtesy" /><br />
+    BirthDate <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aBirthDate" value="@ViewBag.ListOfEmployees[0].BirthDate" /><br />
+    HireDate <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aHireDate" value="@ViewBag.ListOfEmployees[0].HireDate" /><br />
+    Address <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aAddress" value="@ViewBag.ListOfEmployees[0].Address" /><br />
+    City <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aCity" value="@ViewBag.ListOfEmployees[0].City" /><br />
+    Region <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aRegion" value="@ViewBag.ListOfEmployees[0].Region" /><br />
+    PostalCode <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aPostalCode" value="@ViewBag.ListOfEmployees[0].PostalCode" /><br />
+    Country <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aCountry" value="@ViewBag.ListOfEmployees[0].Country" /><br />
+    HomePhone <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aHomePhone" value="@ViewBag.ListOfEmployees[0].HomePhone" /><br />
+    Extension <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aExtension" value="@ViewBag.ListOfEmployees[0].Extension" /><br />
+    Notes <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aNotes" value="@ViewBag.ListOfEmployees[0].Notes" /><br />
+    ReportsTo <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aReportsTo" value="@ViewBag.ListOfEmployees[0].ReportsTo" /><br />
+
+    <input type="submit" />     <input type="reset" />
+
+
+</form>

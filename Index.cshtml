@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<h1>Thsi is NorthWind Home Page</h1>
+
+<!-- THsi is the home page and this is how you create a comment in HTML-->
+<br />
+
+<a href="@Url.Action("GetProducts")">Get Products</a>
+<br />
+<a href="GetCategories">Get Categories</a>
+<br />
+<a href="@Url.Action("GetSuppliers")">Get Suppliers</a>
+<br />
+<a href="@Url.Action("GetCustomers")">Get Customers</a>
+<br />
+<a href="@Url.Action("GetEmployees")">Get Employees</a>
+<br />
+<a href="@Url.Action("GetOrders")">Get Orders</a>
+<br />
+<a href="@Url.Action("GetOrderDetails")">Get Order Details</a>
+<br />
+<a href="@Url.Action("GetShippers")">Get Shippers</a>
+<br />
+
+
+
+<a href="@Url.Action("InsertAProductForm")"> Insert A Product</a>
+
+<a href="@Url.Action("UpdateAProductForm")">Update a product form</a>
+
+<br />
+<br />
+
+
+
+<a href="@Url.Action("InsertACustomerForm")"> Insert A Customer</a>
+
+
+
+<br />
+<br />
+
+
+
+<a href="@Url.Action("InsertAnOrderDetailForm")"> Insert An Order Detail</a>
+
+

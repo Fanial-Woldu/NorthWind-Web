@@ -1,0 +1,65 @@
+﻿
+
+<h3>Customer ID: @ViewBag.ListOfCustomers[0].CustomerId</h3>
+
+
+<form asp-action="UpdateACustomer" method="Post">
+
+    <input type="hidden" name="aCustomerId" value="@ViewBag.ListOfCustomers[0].CustomerId" />
+
+    Company Name <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aCompanyName" value="@ViewBag.ListOfCustomers[0].CompanyName" />
+    <br /><br />
+
+
+    Contact Name <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aContactName" value="@ViewBag.ListOfCustomers[0].ContactName" />
+    <br /><br />
+
+    Contact Title <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aContactTitle" value="@ViewBag.ListOfCustomers[0].ContactTitle" />
+    <br /><br />
+
+    Address <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aAddress" value="@ViewBag.ListOfCustomers[0].Address" />
+    <br /><br />
+
+    City <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aCity" value="@ViewBag.ListOfCustomers[0].City" />
+    <br /><br />
+
+
+    Region <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aRegion" value="@ViewBag.ListOfCustomers[0].Region"/>
+    <br /><br />
+
+
+
+    Postal Code <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aPostalCode" value="@ViewBag.ListOfCustomers[0].PostalCode" />
+    <br /><br />
+
+
+    Country <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aCountry" value="@ViewBag.ListOfCustomers[0].Country" />
+    <br /><br />
+
+
+    Phone <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aPhone" value="@ViewBag.ListOfCustomers[0].Phone" />
+    <br /><br />
+
+
+
+    Fax <br />
+    <input type="text" id="this is for js" class="this is for your css" name="aFax" value="@ViewBag.ListOfCustomers[0].Fax"/>
+    <br />
+
+
+    <input type="submit" />     <input type="reset" />
+
+
+
+
+
+</form>

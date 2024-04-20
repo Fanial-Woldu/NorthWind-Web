@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form action="InsertAProduct" method="Post">
+
+    Product Name <br />
+    <input type="test" id="this is for js" class="this is for your css" name="productName" />
+    <br />
+
+
+
+    Supplier Id <br />
+
+    <br />
+    
+    <select name="supplierId">
+
+        @foreach (var s in ViewBag.ListOfSuppliers)
+        {
+            <option value="@s.SupplierId">@s.SupplierId @s.CompanyName</option>
+        }
+    </select> <br /><br />
+    
+
+
+
+    Category Id <br />
+
+
+    <select name="categoryId">
+
+        @foreach (var c in ViewBag.ListOfCategories)
+        {
+            <option value="@c.CategoryId ">@c.CategoryName</option>
+        }
+    </select><br /><br/>
+
+    Unit Price <br />
+    <input type="text" id="this is for js" class="this is for your css" name="unitPrice" />
+
+
+
+    <input type="submit" />     <input type="reset" />
+
+
+
+
+
+</form>

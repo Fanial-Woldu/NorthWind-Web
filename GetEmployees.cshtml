@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>EmployeeId</td>
+        <td>LastName</td>
+        <td>FirstName</td>
+        <td>Title</td>
+        <td>TitleOfCourtesy</td>
+        <td>BirthDate</td>
+        <td>BirthDate</td>
+        <td>HireDate</td>
+        <td>City</td>
+        <td>Region</td>
+        <td>PostalCode</td>
+        <td>Country</td>
+        <td>HomePhone</td>
+        <td>Extension</td>
+        <td>Photo</td>
+        <td>Notes</td>
+        <td>ReportsTo</td>
+
+    </tr>
+
+    @foreach (var e in ViewBag.ListOfEmployees)
+    {
+        <tr>
+            <td>@e.EmployeeId</td>
+            <td>@e.LastName</td>
+            <td>@e.FirstName</td>
+            <td>@e.Title</td>
+            <td>@e.TitleOfCourtesy</td>
+            <td>@e.BirthDate</td>
+            <td>@e.BirthDate</td>
+            <td>@e.HireDate</td>
+            <td>@e.City</td>
+            <td>@e.Region</td>
+            <td>@e.PostalCode</td>
+            <td>@e.Country</td>
+            <td>@e.HomePhone</td>
+            <td>@e.Extension</td>
+            <td>@e.Photo</td>
+            <td>@e.Notes</td>
+            <td>@e.ReportsTo</td>
+        </tr>
+
+    }
+
+
+
+
+</table>
