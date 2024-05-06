@@ -88,19 +88,19 @@
 
         }
 
-        public Customer(string aCustomerId, string aCompanyName, string aContactName, string aContactTitle, string aAddress, string aCity, string aRegion, string aPostalCode, string aCountry, string aPhone, string aFax)
+        public Customer(string customerId, string companyName, string contactName, string contactTitle, string address, string city, string region, string postalCode, string country, string phone, string fax)
         {
-            this.CustomerId = aCustomerId;
-            this.CompanyName = aCompanyName;
-            this.ContactName = aContactName;
-            this.ContactTitle = aContactTitle;
-            this.Address = aAddress;
-            this.City = aCity;
-            this.Region = aRegion;
-            this.PostalCode = aPostalCode;
-            this.Country = aCountry;
-            this.Phone = aPhone;
-            this.Fax = aFax;
+            this.CustomerId = customerId;
+            this.CompanyName = companyName;
+            this.ContactName = contactName;
+            this.ContactTitle = contactTitle;
+            this.Address = address;
+            this.City = city;
+            this.Region = region;
+            this.PostalCode = postalCode;
+            this.Country = country;
+            this.Phone = phone;
+            this.Fax = fax;
         }
         /*
         public override string ToString()

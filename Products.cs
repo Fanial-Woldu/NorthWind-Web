@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.AccessControl;
 
 namespace NorthWindProject2024.Models
 {
@@ -11,11 +12,12 @@ namespace NorthWindProject2024.Models
         private string productName = "n/a";
         private int supplierId = -1;
         private int categoryId = -1;
+        private string quantityPerUnit = "n/a";
         private double unitPrice = Double.MaxValue;
-        private int unitsinstock = -1;
-        private int unitsonorder = -1;
-        private int reorderlevel = -1;
-        private double discounted = Double.MaxValue;
+        private string unitsinstock = "n/a";
+        private string unitsonorder = "n/a";
+        private string reorderlevel = "n/a";
+        private string discontinued = "n/a";
 
 
         public  int ProductId
@@ -42,33 +44,39 @@ namespace NorthWindProject2024.Models
             set { this.categoryId = value; }
         }
 
+        public string QuantityPerUnit
+        {
+            get { return this.quantityPerUnit; }
+            set { this.quantityPerUnit = value;}
+        }
+
         public double UnitPrice
         {
             get { return this.unitPrice; }
             set { this.unitPrice = value; }
         }
 
-        public int UnitsInStock
+        public string UnitsInStock
         {
             get { return this.unitsinstock; }
             set { this.unitsinstock = value; }
         }
-        public int UnitsOnOrder
+        public string UnitsOnOrder
         {
             get { return this.unitsonorder; }
             set { this.unitsonorder = value; }
         }
 
-        public int ReorderLevel
+        public string ReorderLevel
         {
             get { return this.reorderlevel; }
             set { this.reorderlevel = value; }
         }
 
-        public double Discounted
+        public string Discontinued
         {
-            get { return this.discounted; }
-            set { this.discounted = value; }
+            get { return this.discontinued; }
+            set { this.discontinued = value; }
         }
 
 
@@ -82,18 +90,19 @@ namespace NorthWindProject2024.Models
             //it may have a lot of code
         }
 
-        public Product(int aProductId, string aProductName, int aSupplierId, int aCategoryId, double aUnitPrice, int aUnitsInStock, int aUnitsOnOrder, 
-            int aReorderLevel, double aDiscounted)
+        public Product(int aProductId, string aProductName, int aSupplierId, int aCategoryId, string aQuantityPerUnit, double aUnitPrice, string aUnitsInStock, string aUnitsOnOrder,
+            string aReorderLevel, string aDiscontinued)
         {
             this.ProductId = aProductId;
             this.ProductName = aProductName;
             this.SupplierId = aSupplierId;
             this.CategoryId = aCategoryId;
+            this.QuantityPerUnit = aQuantityPerUnit;
             this.UnitPrice = aUnitPrice;
             this.unitsinstock = aUnitsInStock;
             this.unitsonorder = aUnitsOnOrder;
             this.reorderlevel= aReorderLevel;
-            this.discounted = aDiscounted;
+            this.discontinued = aDiscontinued;
         }
         /*
         public override string ToString()

@@ -5,6 +5,225 @@
 }
 
 
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Customer Form</title>
+    <style>
+
+        body {
+            background-color: #405d27;
+        }
+
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("GetCustomers")" class="btn btn-secondary">Back to Customers</a>
+        </div>
+
+        <h1>Insert Customer Form</h1>
+
+        <!-- Insert Customer form -->
+        <form name="Form" action="InsertACustomer" onsubmit="return validateForm()" method="Post">
+            <div class="form-group">
+                <label for="aCustomerId">Customer ID:</label>
+                <input type="text"  name="aCustomerId" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aCompanyName">Company Name:</label>
+                <input type="text" name="aCompanyName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aContactName">Contact Name:</label>
+                <input type="text" name="aContactName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aContactTitle">Contact Title:</label>
+                <input type="text"  name="aContactTitle" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aAddress">Address:</label>
+                <input type="text"  name="aAddress" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aCity">City:</label>
+                <input type="text"  name="aCity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aRegion">Region:</label>
+                <input type="text"  name="aRegion" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aPostalCode">Postal Code:</label>
+                <input type="text"  name="aPostalCode" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aCountry">Country:</label>
+                <input type="text"  name="aCountry" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aPhone">Phone:</label>
+                <input type="text"  name="aPhone" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aFax">Fax:</label>
+                <input type="text" name="aFax" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="reset" class="btn btn-warning btn-sm">Reset</button>
+
+                
+            </div>
+        </form>
+
+        
+
+    </div>
+    
+
+</body>
+</html>
+
+<script>
+    function validateForm() {
+
+        if (document.forms["Form"]["aCustomerId"].value == "") {
+            alert("ID must be filled out");
+            return false;
+        }
+
+
+        if (document.forms["Form"]["aCompanyName"].value == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aContactName"].value == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aContactTitle"].value == "") {
+            alert("Title must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aAddress"].value == "") {
+            alert("Address must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCity"].value == "") {
+            alert("City must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aRegion"].value == "") {
+            alert("Region must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPostalCode"].value == "") {
+            alert("Postal Code must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCountry"].value == "") {
+            alert("Country must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPhone"].value == "") {
+            alert("Home Phone must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPhone"].value.length < 10) {
+            alert("Home Phone must have 10 numbers");
+            return false;
+
+
+
+
+        }
+
+        if (document.forms["Form"]["aPhone"].value.length > 10) {
+            alert("Home Phone must have 10 numbers");
+            return false;
+        }
+        if (document.forms["Form"]["aFax"].value == "") {
+            alert("Fax must be filled out");
+            return false;
+        }
+
+
+
+
+    }
+</script>
+
+
+
+@*
 <form asp-action="InsertACustomer" method="Post">
 
     Customer Id <br />
@@ -69,3 +288,4 @@
 
 
 </form>
+*@

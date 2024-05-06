@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace NorthWindProject2024.Models
+﻿namespace NorthWindProject2024.Models
 {
     ////Woldu, Fanial K
     public class OrderDetails
     {
-        
-        public int orderId = -1;
-        public int productId = -1;
+        private int orderId = -1;
+        private int productId = -1;
         private double unitPrice = Double.MaxValue;
         private int quantity = -1;
         private double discount = 0.0;
@@ -45,13 +41,13 @@ namespace NorthWindProject2024.Models
 
 
         //Constructor
-        public OrderDetails(int aOrderId, int aProductId, double aUnitPrice, int aQuantity, double aDiscount)
+        public OrderDetails(int orderId, int productId, double unitPrice, int quantity, double discount)
         {
-            this.OrderId = aOrderId;
-            this.ProductId = aProductId;
-            this.UnitPrice = aUnitPrice;
-            this.Quantity = aQuantity;
-            this.Discount = aDiscount;
+            this.OrderId = orderId;
+            this.ProductId = productId;
+            this.UnitPrice = unitPrice;
+            this.Quantity = quantity;
+            this.Discount = discount;
         }
     }
 }

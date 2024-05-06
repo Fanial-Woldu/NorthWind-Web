@@ -7,7 +7,7 @@
 <h2>Update a Order </h2>
 @*<h3>Primary Key: @ViewBag.ListOfOrder[0].OrderId</h3>*@
 
-<form action="UpdateAOrder" method="Post">
+<form action="UpdateAOrder" name="Form" onsubmit="return validateForm()" method="Post">
 
     <input type="hidden" name="aOrderId" value="@ViewBag.ListOfOrders[0].OrderId" />
 
@@ -116,3 +116,56 @@
 
 
 </form>
+
+
+<script>
+    function validateOrdersForm() {
+
+
+        if (document.forms["Form"]["aOrderDate"].value == "") {
+            alert("OrderDate must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aRequiredDate"].value == "") {
+            alert("RequiredDate must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShippedDate"].value == "") {
+            alert("ShippedDate must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipVia"].value == "") {
+            alert("ShipVia must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aFreight"].value == "") {
+            alert("Freight must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipName"].value == "") {
+            alert("ShipName must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipAddress"].value == "") {
+            alert("ShipAddress must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipCity"].value == "") {
+            alert("ShipCity must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipRegion"].value == "") {
+            alert("ShipRegion must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipPostalCode"].value == "") {
+            alert("ShipPostalCode must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipCountry"].value == "") {
+            alert("ShipCountry must be filled out");
+            return false;
+        }
+
+    }
+</script>

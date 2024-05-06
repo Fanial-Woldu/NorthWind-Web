@@ -1,103 +1,231 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@*OVO - CSS*@
 
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Order Form</title>
+    <style>
 
-
-
-<form action="InsertAOrder" method="Post">
-
-    @*CustomerId <br />
-    <input type="test" id="this is for js" class="this is for your css" name="aCustomerId" />
-    <br />*@
-
-
-    Customer Id
-
-    <br />
-
-    <select name="aCustomerId">
-
-        @foreach (var e in ViewBag.ListOfCustomers)
-        {
-            <option value="@e.CustomerId">@e.CustomerId @e.CompanyName</option>
+        body {
+            background-color: #405d27;
         }
-    </select> <br /><br />
 
-
-    Employee Id
-
-    <br />
-
-    <select name="aEmployeeId">
-
-        @foreach (var e in ViewBag.ListOfEmployees)
-        {
-            <option value="@e.EmployeeId">@e.EmployeeId @e.FirstName @e.LastName</option>
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
         }
-    </select> <br /><br />
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("GetOrders")" class="btn btn-secondary">Back to Orders</a>
+        </div>
+
+        <h1>Insert Orders Form</h1>
+
+        <!-- Insert Customer form -->
+        <form name="Form" action="InsertAOrder" onsubmit="return validateForm()" method="Post">
+
+
+            <div class="formGroup">
+                <label for="aCustomerId">Customer ID</label>
+                <select name="aCustomerId" id="aCustomerId" class="formGroup" placeholder="Enter Customer ID">
+                    @foreach (var c in ViewBag.ListOfCustomers)
+                    {
+                        <option value="@c.CustomerId">@c.CustomerId @c.CompanyName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="formGroup">
+                <label for="aEmployeeId">Employee ID</label>
+                <select name="aEmployeeId" id="aEmployeeId" class="formGroup" placeholder="Enter Employee ID">
+                    @foreach (var e in ViewBag.ListOfEmployees)
+                    {
+                        <option value="@e.EmployeeId">@e.EmployeeId @e.LastName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="aOrderDate">Order Date:</label>
+                <input type="text" name="aOrderDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aRequiredDate">Required Date:</label>
+                <input type="text" name="aRequiredDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShippedDate">Shipped Date:</label>
+                <input type="text" name="aShippedDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipVia">Ship Via:</label>
+                <input type="text" name="aShipVia" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aFreight">Freight:</label>
+                <input type="text" name="aFreight" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipName">Ship Name:</label>
+                <input type="text" name="aShipName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipAddress">Ship Address:</label>
+                <input type="text" name="aShipAddress" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipCity">Ship City:</label>
+                <input type="text" name="aShipCity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipRegion">Ship Region:</label>
+                <input type="text" name="aShipRegion" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipPostalCode">Ship Postal Code:</label>
+                <input type="text" name="aShipPostalCode" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aShipCountry">Ship Country:</label>
+                <input type="text" name="aShipCountry" class="form-control" />
+            </div>
 
 
 
-    @*
-    Category Id <br />
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="reset" class="btn btn-warning btn-sm">Reset</button>
 
 
-    <select name="categoryId">
+            </div>
+        </form>
 
-    @foreach (var c in ViewBag.ListOfCategories)
-    {
-    <option value="@c.CategoryId ">@c.CategoryName</option>
+
+
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    function validateOrdersForm() {
+        
+        if (document.forms["Form"]["aCustomerId"].value == "") {
+            alert("Pick Customer ID");
+            return false;
+        }
+        if (document.forms["Form"]["aEmployeeId"].value == "") {
+            alert("Employee ID must be chsoem");
+            return false;
+        }
+
+        if (document.forms["Form"]["aOrderDate"].value == "") {
+            alert("OrderDate must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aRequiredDate"].value == "") {
+            alert("RequiredDate must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShippedDate"].value == "") {
+            alert("ShippedDate must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipVia"].value == "") {
+            alert("ShipVia must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aFreight"].value == "") {
+            alert("Freight must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipName"].value == "") {
+            alert("ShipName must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipAddress"].value == "") {
+            alert("ShipAddress must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipCity"].value == "") {
+            alert("ShipCity must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipRegion"].value == "") {
+            alert("ShipRegion must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipPostalCode"].value == "") {
+            alert("ShipPostalCode must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aShipCountry"].value == "") {
+            alert("ShipCountry must be filled out");
+            return false;
+        }
+
     }
-    </select><br /><br />
-    *@
+</script>
 
-
-    Order Date <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aOrderDate" /><br />
-
-    Reqired Date <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aRequiredDate" /><br />
-
-    Shipped Date <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShippedDate" /><br />
-
-    Ship Via <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipVia" /><br />
-
-    Freight <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aFreight" /><br />
-
-    Ship Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipName" /><br />
-
-    Ship Address <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipAddress" /><br />
-
-    Ship City <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipCity" /><br />
-
-    Ship Region <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipRegion" /><br />
-
-    Ship Postal Code <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipPostalCode" /><br />
-
-    Ship Country <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aShipCountry" /><br />
-
-    <input type="submit" />     <input type="reset" />
-
-
-
-
-
-</form>

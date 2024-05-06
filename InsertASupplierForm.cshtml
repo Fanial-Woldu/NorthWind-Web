@@ -1,17 +1,7 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-
-
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Update Customer Form</title>
+    <title>Insert Supplier Form</title>
     <style>
 
         body {
@@ -73,14 +63,15 @@
         </div>
 
         <div style="text-align: right; margin-bottom: 10px;">
-            <a href="@Url.Action("GetCustomers")" class="btn btn-secondary">Back to Customers</a>
+            <a href="@Url.Action("GetSuppliers")" class="btn btn-secondary">Back to Suppliers</a>
         </div>
 
-        <h1>Update Customer Form</h1>
+        <h1>Insert Suppliers Form</h1>
 
-        <!-- Update Customer form -->
-        <form name="Form" action="UpdateACustomer" onsubmit="return validateForm()" method="Post">
+        <!-- Insert Customer form -->
+        <form name="Form" action="InsertASupplier" onsubmit="return validateForm()" method="Post">
             
+
             <div class="form-group">
                 <label for="aCompanyName">Company Name:</label>
                 <input type="text" name="aCompanyName" class="form-control" />
@@ -132,6 +123,12 @@
             </div>
 
             <div class="form-group">
+                <label for="aHomePage">Home Page:</label>
+                <input type="text" name="aHomePage" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>
 
                 <button type="reset" class="btn btn-warning btn-sm">Reset</button>
@@ -151,7 +148,8 @@
 <script>
     function validateForm() {
 
-        
+
+
 
         if (document.forms["Form"]["aCompanyName"].value == "") {
             alert("Name must be filled out");
@@ -201,83 +199,22 @@
         if (document.forms["Form"]["aPhone"].value.length > 10) {
             alert("Home Phone must have 10 numbers");
             return false;
+
         }
         if (document.forms["Form"]["aFax"].value == "") {
             alert("Fax must be filled out");
             return false;
         }
-
-
-
-
+        if (document.forms["Form"]["aHomePage"].value == "") {
+            alert("Home Page must be filled out");
+            return false;
+        }
     }
-</script>
-
-
-
-@*
-<form asp-action="InsertACustomer" method="Post">
-
-    Customer Id <br />
-
-    <input type="text" id="this is for js" class="this is for your css" name="aCustomerId" />
-    <br /><br />
-
-
-    Company Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCompanyName" />
-    <br /><br />
-
-
-    Contact Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aContactName" />
-    <br /><br />
-
-    Contact Title <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aContactTitle" />
-    <br /><br />
-
-    Address <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aAddress" />
-    <br /><br />
-
-    City <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCity" />
-    <br /><br />
-
-
-    Region <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aRegion" />
-    <br /><br />
-
-
-
-    Postal Code <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPostalCode" />
-    <br /><br />
-
-
-    Country <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCountry" />
-    <br /><br />
-
-
-    Phone <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPhone" />
-    <br /><br />
-
-
-
-    Fax <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aFax" />
-    <br />
-
-
-    <input type="submit"  />     <input type="reset" />
 
 
 
 
+    
+ </script>
 
-</form>
-*@
+

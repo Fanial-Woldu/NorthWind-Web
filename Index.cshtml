@@ -1,55 +1,141 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    <div id="title">
+        <b>
+            Github Links:
+            https://github.com/Fanial-Woldu
+
+            https://github.com/Krupa507
+        </b>
+    </div>
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+   
 </div>
 
 
-<h1>Thsi is NorthWind Home Page</h1>
-
-<!-- THsi is the home page and this is how you create a comment in HTML-->
-<br />
-
-<a href="@Url.Action("GetProducts")">Get Products</a>
-<br />
-<a href="GetCategories">Get Categories</a>
-<br />
-<a href="@Url.Action("GetSuppliers")">Get Suppliers</a>
-<br />
-<a href="@Url.Action("GetCustomers")">Get Customers</a>
-<br />
-<a href="@Url.Action("GetEmployees")">Get Employees</a>
-<br />
-<a href="@Url.Action("GetOrders")">Get Orders</a>
-<br />
-<a href="@Url.Action("GetOrderDetails")">Get Order Details</a>
-<br />
-<a href="@Url.Action("GetShippers")">Get Shippers</a>
-<br />
 
 
+@*     Jacques Apaloo *@
 
-<a href="@Url.Action("InsertAProductForm")"> Insert A Product</a>
+<title>NorthWind Home Page</title>
 
-<a href="@Url.Action("UpdateAProductForm")">Update a product form</a>
+<head>
 
-<br />
-<br />
+    <meta charset="UTF-8" />
+
+    <style>
+
+        a {
+            border-radius: 5px;
+            color: #FFFFFF;
+            margin: 10px;
+            padding: 3px;
+            text-decoration: none;
+        }
+
+            a:hover {
+                background-color: #2E502E;
+            }
+
+        body {
+            background-color: #acc98f;
+            background-image: url('https://cadnomori.neocities.org/forest2.jpg');
+            font-family: "Times New Roman", Times, serif;
+            color: #20520c;
+        }
+
+        tbody {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        /* body {
+
+                    background-color: #263238;
+
+                    font-family: Arial, Helvetica, sans-serif;
+
+                    margin: 40px auto;
+
+                    max-width: 900px;
+
+                } */
+
+        #card {
+            background-color: #a4ba64;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            display: flex;
+            height: 285px;
+        }
+
+        #content {
+            margin: 10px;
+        }
+
+        #title {
+            color: #2E502E;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="card">
+
+        <img id="forest" src="https://i.imgur.com/AkN0Hxj.png">
+
+        <div id="content">
+
+            <div id="title"><b>Welcome to the Northwind Home Page</b></div>
+
+            <table>
+
+                <tbody>
+
+                    <tr>
+
+                        <td><a href="@Url.Action("GetProducts")">GetProducts</a></td>
+
+                        <td><a href="@Url.Action("GetSuppliers")" >GetSuppliers</a></td>
+
+                        <td><a href="@Url.Action("GetCustomers")" >GetCustomers</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="@Url.Action("GetEmployees")" >Get Employees</a></td>
+
+                        <td><a href="@Url.Action("GetOrders")" >GetOrders</a></td>
+
+                        <td><a href="@Url.Action("GetOrderDetails")" >GetOrderDetails</a></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><a href="@Url.Action("GetShippers")" >GetShippers</></a></td>
+
+                        <td><a href="@Url.Action("GetCategories")">GetCategories</></a></td>
+                        
+                    </tr>
 
 
+                </tbody>
 
-<a href="@Url.Action("InsertACustomerForm")"> Insert A Customer</a>
+            </table>
 
+        </div>
 
+    </div>
 
-<br />
-<br />
+</body>
 
-
-
-<a href="@Url.Action("InsertAnOrderDetailForm")"> Insert An Order Detail</a>
 
 

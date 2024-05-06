@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-
-namespace NorthWindProject2024.Models
+﻿namespace NorthWindProject2024.Models
 {
     //Code Writen By Logan Krupa
     public class Order

@@ -1,11 +1,68 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+<style>
+    body {
+        background-color: #405d27;
+    }
+
+    .content-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 0.9em;
+        min-width: 400px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+        background-color: #fff5;
+    }
+
+        .content-table::-webkit-scrollbar {
+            width: 8px 8px 0 0;
+            height: 8px 8px 0 0;
+        }
+
+        .content-table thead tr {
+            background-color: #3e4444;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+            overflow: auto;
+        }
+
+            .content-table tbody tr:nth-child(even) {
+                background-color: #f0f5f1;
+            }
+
+    button {
+        background-color: #3e4444;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
 
 
-<table class="table table-bordered">
+<div style="text-align: right; margin-bottom: 10px;">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+</div>
+
+<h1 style="text-align: center;" color: #2E502E;>Suppliers</h1>
+
+
+<a href="@Url.Action("InsertASupplierForm")" class="btn btn-warning btn-sm"> Insert A Supplier</a>
+
+<table class="content-table">
     <tr>
         <td>SupplierId</td>
         <td>CompanyName</td>
@@ -38,6 +95,7 @@
             <td>@s.Phone</td>
             <td>@s.Fax</td>
             <td>@s.HomePage</td>
+            <td><a href="@Url.Action("UpdateASupplierForm", new { aSupplierId = s.SupplierId })" class="btn btn-warning btn-sm">Update</a></td>
         </tr>
     }
 

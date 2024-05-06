@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Management</title>
+    <title>Order Detail Management</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: #405d27;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
         }
 
         .container {
@@ -25,13 +26,13 @@
         }
 
         .btn-custom {
-            background-color: #405d27;
+            background-color: #17a2b8;
             border-color: #17a2b8;
         }
 
             .btn-custom:hover {
-                background-color: #405d27;
-                border-color: #405d27;
+                background-color: #138496;
+                border-color: #138496;
             }
 
         .table {
@@ -44,7 +45,7 @@
             }
 
             .table th {
-                background-color: Green;
+                background-color: #007bff;
                 color: #fff;
             }
 
@@ -61,34 +62,40 @@
     <div class="container">
         <!-- Back button -->
         <div class="text-right btn-back">
+
             <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
         </div>
 
         <!-- Insert Customer button -->
         <div class="text-right btn-insert">
             <div class="text-right">
-                <a href="@Url.Action("InsertACustomerForm")" class="btn btn-primary btn-custom">Insert Customer</a>
+                <a href="@Url.Action("InsertAnOrderDetailForm")" class="btn btn-primary btn-custom">Insert Order Detail</a>
             </div>
         </div>
 
-        <h1 class="text-center" style="color: Black;">Customers</h1>
+        <h1 class="text-center" style="color: #007bff;">Order Details</h1>
+
 
 
         <!-- Filter form -->
-        <form method="get" action="@Url.Action("GetCustomerByFilter")">
+        <form method="get" action="@Url.Action("GetOrderDetailByFilter")">
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
-                        <label for="aCustomerId">Customer ID:</label>
-                        <input type="text" id="aCustomerId" name="aCustomerId" class="form-control">
+                        <label for="aOrderId">Order ID:</label>
+                        <input type="text" id="aOrderId" name="aOrderId" class="form-control">
+                        <label for="aProductId">Product ID:</label>
+                        <input type="text" id="aProductId" name="aProductId" class="form-control">
                     </div>
+
                 </div>
+
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-primary btn-custom" style="margin-top: 32px;">Apply Filters</button>
                 </div>
                 <!-- Refresh Button -->
                 <div class="col-md-2 btn-refresh">
-                    <a href="@Url.Action("GetCustomers")" class="btn btn-info btn-custom" style="margin-top: 32px;">Refresh</a>
+                    <a href="@Url.Action("GetOrderDetails")" class="btn btn-info btn-custom" style="margin-top: 32px;">Refresh</a>
                 </div>
 
             </div>
@@ -97,47 +104,36 @@
         <!-- Customer table -->
         <div class="table-responsive">
             <table class="table table-bordered">
+                <!-- Table headers -->
                 <thead>
                     <tr>
-                        <th>Customer ID</th>
-                        <th>Company Name</th>
-                        <th>Contact Name</th>
-                        <th>Contact Title</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>Region</th>
-                        <th>Postal Code</th>
-                        <th>Country</th>
-                        <th>Phone</th>
-                        <th>Fax</th>
+                        <th>OrderId</th>
+                        <th>ProductId</th>
+                        <th>UnitPrice</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
                         <th>Update Info</th>
                     </tr>
                 </thead>
+                <!-- Table body -->
                 <tbody>
-                    <!-- Rows of customer data -->
-                    @foreach (var c in ViewBag.ListOfCustomers)
+                    <!-- Rows of order detail data -->
+                    @foreach (var od in ViewBag.ListOfOrderDetailsByFilter)
                     {
                         <tr>
-                            <td>@c.CustomerId</td>
-                            <td>@c.CompanyName</td>
-                            <td>@c.ContactName</td>
-                            <td>@c.ContactTitle</td>
-                            <td>@c.Address</td>
-                            <td>@c.City</td>
-                            <td>@c.Region</td>
-                            <td>@c.PostalCode</td>
-                            <td>@c.Country</td>
-                            <td>@c.Phone</td>
-                            <td>@c.Fax</td>
-                            <td><a href="@Url.Action("UpdateACustomerForm", new { aCustomerId = c.CustomerId })" class="btn btn-warning btn-sm">Update</a></td>
+                            <td>@od.OrderId</td>
+                            <td>@od.ProductId</td>
+                            <td>@od.UnitPrice</td>
+                            <td>@od.Quantity</td>
+                            <td>@od.Discount</td>
+                            <td><a href="@Url.Action("UpdateAnOrderDetailForm", new { aOrderId = od.OrderId })" class="btn btn-warning btn-sm">Update</a></td>
                         </tr>
                     }
                 </tbody>
             </table>
-            
+            < script src = "site.js" ></script >
         </div>
     </div>
 </body>
-
 
 </html>

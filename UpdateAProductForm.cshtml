@@ -4,79 +4,215 @@
 @{
 }
 
-<h2>Update a Product </h2>
-<h3>Primary Key: @ViewBag.ListOfPRoducts[0].ProductId</h3>
 
 
 
 
-<form action="UpdateAProduct" method="Post">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Product Form</title>
+    <style>
 
-    <input type="hidden" name="productId" value="@ViewBag.ListOfProducts[0].ProductId" />
-
-
-    Product Name <br />
-    <input type="test" id="this is for js" class="this is for your css" name="productName" value="@ViewBag.ListOfProducts[0].ProductName" /><br />
-    <br /><br />
-    Supplier Id <br />
-    @*<input type="text" id="this is for js" class="this is for your css" name="supplierId" />*@
-    
-    <select name="supplierid">
-
-        @foreach (var s in ViewBag.ListOfSuppliers)
-        {
-            @if(s.SupplierId == @ViewBag.ListOfProducts[0].SupplierId){
-                <option value="@s.SupplierId" SELECTED>@s.SupplierId @s.CompanyName</option>
-
-            }
-            else{
-                <option value="@s.SupplierId">@s.SupplierId @s.CompanyName</option>
-
-            }
+        body {
+            background-color: #405d27;
         }
-    </select>
 
-
-
-    <br />
-
-    Category Id <br />
-    @*<input type="text" id="this is for js" class="this is for your css" name="supplierId" />*@
-
-
-    <select name="categoryId">
-
-        @foreach (var c in ViewBag.ListOfCategories)
-        {
-            @if (@c.CategoryId == @ViewBag.ListOfProducts[0].CategoryId)
-            {
-                <option value="@c.CategoryId" SELECTED>@c.CategoryId @c.CategoryName</option>
-
-            }
-            else
-            {
-                <option value="@c.CategoryId">@c.CategoryId @c.CategoryName</option>
-
-            }
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
         }
-    </select>
-    <br />
 
-    Unit Price <br />
-    <input type="text" id="this is for js" class="this is for your css" name="unitPrice" value = "@ViewBag.ListOfProducts[0].UnitPrice" />
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    <br />
+        label {
+            font-weight: bold;
+        }
 
-    <input type="submit" />     <input type="reset" />
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("GetProducts")" class="btn btn-secondary">Back to Products</a>
+        </div>
+
+
+        
+        <h1>Update Products Form</h1>
+        <h3>Primary Key: @ViewBag.ListOfProducts[0].ProductId</h3>
+
+        <!-- Insert Customer form -->
+        <form name="Form" action="UpdateAProduct" onsubmit="return validateForm()" method="Post">
+
+            <div class="formGroup">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" class="formGroup" name="aProductName" placeholder=" Enter product name" />
+
+            </div>
+
+
+            <div class="formGroup">
+                <label for="supplierid">Supplier ID</label>
+                <select name="aSupplierId" id="supplierid" class="formGroup" placeholder="Enter supplier ID">
+                    @foreach (var s in ViewBag.ListOfSuppliers)
+                    {
+                        <option value="@s.SupplierId">@s.SupplierId @s.CompanyName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="formGroup">
+                <label for="categoryId">Category ID</label>
+                <select name="aCategoryId" id="categoryId" class="formGroup" placeholder="Enter category ID">
+                    <label for="categoryId">Category ID</label>
+                    @foreach (var c in ViewBag.ListOfCategories)
+                    {
+                        <option value="@c.CategoryId ">@c.CategoryName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="formGroup">
+                <label for="unitPrice">Unit Price</label>
+                <input type="text" id="unitPrice" class="formGroup" name="aUnitPrice" placeholder="Enter unit price" />
+
+            </div>
+
+
+
+
+            <div class="formGroup">
+                <label for="unitPrice">Quantity Per Unit:</label>
+                <input type="text" id="unitPrice" class="formGroup" name="aQuantityPerUnit" placeholder="Enter Quantity PerUnit" />
+
+            </div>
+
+
+            <div class="formGroup">
+                <label for="unitPrice">Units In Stock</label>
+                <input type="text" id="unitPrice" class="formGroup" name="aUnitsInStock" placeholder="Enter Units In Stock" />
+
+            </div>
+
+            <div class="formGroup">
+                <label for="unitPrice">Units On Order</label>
+                <input type="text" id="unitPrice" class="formGroup" name="aUnitsOnOrder" placeholder="Enter Units On Order" />
+
+            </div>
+
+            <div class="formGroup">
+                <label for="unitPrice">Reorder Level</label>
+                <input type="text" id="unitPrice" class="formGroup" name="aReorderLevel" placeholder="Enter Reorder Level" />
+
+            </div>
+
+            <div class="formGroup">
+                <label for="unitPrice">Discontinued</label>
+                <input type="text" id="unitPrice" class="formGroup" name="aDiscontinued" placeholder="Enter Discontinued" />
+
+            </div>
 
 
 
 
 
-</form>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="reset" class="btn btn-warning btn-sm">Reset</button>
+
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+</body>
+</html>
 
 
 
 
 
+
+
+<script>
+    function validateForm() {
+
+        if (document.forms["Form"]["aProductName"].value == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+
+        if (document.forms["Form"]["aQuantityPerUnit"].value == "") {
+            alert("QuantityPerUnit must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aUnitPrice"].value == "") {
+            alert("UnitPrice must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aUnitsInStock"].value == "") {
+            alert("UnitsInStock must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aUnitsOnOrder"].value == "") {
+            alert("UnitsOnOrder must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aReorderLevel"].value == "") {
+            alert("ReorderLevel must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aDiscontinued"].value == "") {
+            alert("Discontinued must be filled out");
+            return false;
+        }
+
+    }
+</script>
 

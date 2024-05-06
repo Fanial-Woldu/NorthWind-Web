@@ -3,43 +3,264 @@
 *@
 @{
 }
-<form action="InsertAEmployee" method="Post">
 
 
-    LastName <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aLastName" /><br />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Employees Form</title>
+    <style>
+
+        body {
+            background-color: #405d27;
+        }
+
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("GetEmployees")" class="btn btn-secondary">Back to Employees</a>
+        </div>
+
+        <h1>Insert Employee Form</h1>
+
+        <!-- Insert Employee form -->
+        <form name="Form" action="InsertAEmployee" onsubmit="return validateForm()" method="Post">
+            <div class="form-group">
+                <label for="aLastName">Last Name:</label>
+                <input type="text" name="aLastName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aFirstName">First Name:</label>
+                <input type="text" name="aFirstName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aTitle">Title:</label>
+                <input type="text" name="aTitle" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aTitleOfCourtesy">Title Of Courtesy:</label>
+                <input type="text" name="aTitleOfCourtesy" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aBirthDate">Birth Date:</label>
+                <input type="text" name="aBirthDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aHireDate">Hire Date:</label>
+                <input type="text" name="aHireDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aAddress">Address:</label>
+                <input type="text" name="aAddress" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aCity">City:</label>
+                <input type="text" name="aCity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aRegion">Region:</label>
+                <input type="text" name="aRegion" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aPostalCode">Postal Code:</label>
+                <input type="text" name="aPostalCode" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aCountry">Country:</label>
+                <input type="text" name="aCountry" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aHomePhone">Home Phone:</label>
+                <input type="text" name="aHomePhone" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aExtension">Extension:</label>
+                <input type="text" name="aExtension" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aNotes">Notes:</label>
+                <input type="text" name="aNotes" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aReportsTo">Reports To:</label>
+                <input type="text" name="aReportsTo" class="form-control" />
+            </div>
 
 
-    First Name <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aFirstName" /><br />
-    Title <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aTitle" /><br />
-    TitleOfCourtesy <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aTitleOfCourtesy" /><br />
-    BirthDate <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aBirthDate" /><br />
-    HireDate <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aHireDate" /><br />
-    Address <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aAddress" /><br />
-    City <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCity" /><br />
-    Region <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aRegion" /><br />
-    PostalCode <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aPostalCode" /><br />
-    Country <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aCountry" /><br />
-    HomePhone <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aHomePhone" /><br />
-    Extension <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aExtension" /><br />
-    Notes <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aNotes" /><br />
-
-    ReportsTo <br />
-    <input type="text" id="this is for js" class="this is for your css" name="aReportsTo" /><br />
-    <input type="submit" />     <input type="reset" />
 
 
-</form>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="reset" class="btn btn-warning btn-sm">Reset</button>
+
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+<script>
+    function validateForm() {
+
+        if (document.forms["Form"]["aLastName"].value == "") {
+            alert("Last Name must be filled out");
+            return false;
+        }
+
+
+        if (document.forms["Form"]["aFirstName"].value == "") {
+            alert("First Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aTitle"].value == "") {
+            alert("Title must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aTitleOfCourtesy"].value == "") {
+            alert("Title Of Courtesy must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aBirthDate"].value == "") {
+            alert("Birth Date must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aHireDate"].value == "") {
+            alert("Hire Date must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aAddress"].value == "") {
+            alert("Address must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCity"].value == "") {
+            alert("City must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aRegion"].value == "") {
+            alert("Region must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aPostalCode"].value == "") {
+            alert("Postal Code must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aCountry"].value == "") {
+            alert("Country must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aHomePhone"].value == "") {
+            alert("Home Phone must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aHomePhone"].value.length < 10) { 
+            alert("Home Phone must have 10 numbers");
+            return false;
+
+
+
+            
+        }
+
+        if (document.forms["Form"]["aHomePhone"].value.length > 10) {
+            alert("Home Phone must have 10 numbers");
+            return false;
+
+
+
+
+        }
+        if (document.forms["Form"]["aExtension"].value == "") {
+            alert("Extension must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aNotes"].value == "") {
+            alert("Notes must be filled out or N/A");
+            return false;
+        }
+        if (document.forms["Form"]["aReportsTo"].value == "") {
+            alert("Roports To must be filled out");
+            return false;
+        }
+
+
+
+
+    }
+</script>

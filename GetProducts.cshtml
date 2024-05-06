@@ -1,16 +1,81 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+<style>
+    body {
+        background-color: #405d27;
+    }
 
-<table class="table table-bordered">
+    .content-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 0.9em;
+        min-width: 400px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+        background-color: #fff5;
+    }
+
+        .content-table::-webkit-scrollbar {
+            width: 8px 8px 0 0;
+            height: 8px 8px 0 0;
+        }
+
+        .content-table thead tr {
+            background-color: #3e4444;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+            overflow: auto;
+        }
+
+            .content-table tbody tr:nth-child(even) {
+                background-color: #f0f5f1;
+            }
+
+    button {
+        background-color: #3e4444;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+
+<div style="text-align: right; margin-bottom: 10px;">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+</div>
+
+
+<h1 style="text-align: center;" color: #2E502E;>Products</h1>
+
+
+
+<a href="@Url.Action("InsertAProductForm")" class="btn btn-warning btn-sm"> Insert A Product</a>
+
+<table class="content-table" >
     <tr>
         <td>ProductId</td>
         <td>ProductName</td>
         <td>SupplierId</td>
         <td>CategoryId</td>
+        <td>QuntityPerUnit</td>
         <td>UnitPrice</td>
+        <td>UnitsInStock</td>
+        <td>UnitsOnOrder</td>
+        <td>ReorderLevel</td>
+        <td>Discontinued</td>
     </tr>
 
     @foreach (var p in ViewBag.ListOfProducts)
@@ -24,8 +89,13 @@
             <td>@p.ProductName</td>
             <td>@p.SupplierId</td>
             <td>@p.CategoryId</td>
+            <td>@p.QuantityPerUnit</td>
             <td>@p.UnitPrice</td>
-            <td> <a href="UpdateAProductForm?aProductId=@p.ProductId">Update</a> </td>
+            <td>@p.UnitsInStock</td>
+            <td>@p.UnitsOnOrder</td>
+            <td>@p.ReorderLevel</td>
+            <td>@p.Discontinued</td>
+            <td> <a href="UpdateAProductForm?aProductId=@p.ProductId" class="btn btn-warning btn-sm">Update</a> </td>
         </tr>
     }
 

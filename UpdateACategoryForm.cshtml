@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Category Form</title>
+    <style>
+
+        body {
+            background-color: #405d27;
+        }
+
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("GetCategories")" class="btn btn-secondary">Back to Categories</a>
+        </div>
+
+        <h1>Update Category Form</h1>
+
+        
+
+        <!-- Insert Category form -->
+        <form name="Form" action="InsertACategory" onsubmit="return validateForm()" method="Post">
+
+            
+            
+
+            <div class="form-group">
+                <label for="aCategoryName">Category Name:</label>
+                <input type="text" name="aCategoryName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aDescription">Description:</label>
+                <input type="text" name="aDescription" class="form-control" />
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="reset" class="btn btn-warning btn-sm">Reset</button>
+
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+<script>
+    function validateForm() {
+
+        if (document.forms["Form"]["aCategoryName"].value == "") {
+            alert("Category Name must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aDescription"].value == "") {
+            alert("Description must be filled out");
+            return false;
+        }
+    }
+</script>
+

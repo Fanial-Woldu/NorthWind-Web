@@ -1,77 +1,167 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Order Detail Form</title>
+    <style>
 
-<h2>Insert New Order Detail</h2>
-
-
-<form asp-action="InsertAnOrderDetail" method="Post">
-
-    Order Id <br />
-    
-
-    <select name="aOrderId">
-
-        @foreach (var o in ViewBag.ListOfOrderDetails)
-        {
-
-            <option value="@o.OrderId"> @o.OrderId </option>
-
-
+        body {
+            background-color: #405d27;
         }
 
-    </select>
-
-    <br /><br />
-
-
-    Product Id <br />
-    
-
-    <select name="aProductId">
-
-        @foreach (var p in ViewBag.ListOfProducts)
-        {
-
-            <option value="@p.ProductId"> @p.ProductId :  @p.ProductName </option>
-
-
+        .container {
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-    </select>
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-    <br /><br />
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+            .btn-primary:hover,
+            .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back button -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="@Url.Action("GetOrderDetails")" class="btn btn-secondary">Back to Order Details</a>
+        </div>
+
+        <h1>Insert Order Details Form</h1>
+
+        <!-- Insert Customer form -->
+        <form name="Form" action="InsertAnOrderDetail" onsubmit="return validateForm()" method="Post">
+
+
+            <div class="formGroup">
+                <label for="orderId">Order ID</label>
+                <select name="aOrderId" id="aOrderId" class="formGroup" placeholder="Enter Order ID">
+                    @foreach (var o in ViewBag.ListOfOrderDetails)
+                    {
+                        <option value="@o.OrderId">@o.OrderId</option>
+                    }
+                </select>
+            </div>
+
+            <div class="formGroup">
+                <label for="productId">Supplier ID</label>
+                <select name="aProductId" id="aProductId" class="formGroup" placeholder="Enter Product ID">
+                    @foreach (var p in ViewBag.ListOfProducts)
+                    {
+                        <option value="@p.ProductId">@p.ProductId @p.ProductName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="aUnitPrice">Unit Price:</label>
+                <input type="text" name="aUnitPrice" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aQuantity">Quantity:</label>
+                <input type="text" name="aQuantity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="aDiscount">Discount:</label>
+                <input type="text" name="aDiscount" class="form-control" />
+            </div>
+
+            
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <button type="reset" class="btn btn-warning btn-sm">Reset</button>
+
+
+            </div>
+        </form>
 
 
 
+    </div>
 
 
-    Unit Price <br />
-    <input type="text" id="this4 is for js" class="this is for your css" name="aUnitPrice" /> <br />
-    <br /><br />
-
-
-    Quantity <br />
-    <input type="text" id="this3 is for js" class="this is for your css" name="aQuantity" /> <br />
-
-    <br /><br />
-
-
-    Discount <br />
-    <input type="text" id="this3 is for js" class="this is for your css" name="aDiscount" /> <br />
-
-
-    <br /><br />
+</body>
+</html>
 
 
 
+<script>
+    function validateForm() {
+
+        if (document.forms["Form"]["aOrderId"].value == "") {
+            alert("Order Id must be filled out");
+            return false;
+        }
+
+
+        if (document.forms["Form"]["aProductId"].value == "") {
+            alert("Product Id must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aUnitPrice"].value == "") {
+            alert("UnitPrice must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aQuantity"].value == "") {
+            alert("Quantity must be filled out");
+            return false;
+        }
+        
+        if (document.forms["Form"]["aDiscount"].value == "") {
+            alert("Discount must be filled out");
+            return false;
+        }
+        if (document.forms["Form"]["aDiscount"].value > 0 && document.forms["Form"]["aDiscount"].value < 1) {
+            alert("Discount must be less than 1");
+            return false;
+        }
+        
 
 
 
-    <input type="submit" />    <input type="reset" />
-
-
-</form>
+    }
+</script>
 

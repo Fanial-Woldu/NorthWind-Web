@@ -26,7 +26,7 @@
 
         .btn-custom {
             background-color: #405d27;
-            border-color: #17a2b8;
+            border-color: #405d27;
         }
 
             .btn-custom:hover {
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <h1 class="text-center" style="color: Black;">Customers</h1>
+        <h1 class="text-center" style="color: #007bff;">Customers</h1>
 
 
         <!-- Filter form -->
@@ -83,14 +83,14 @@
                         <input type="text" id="aCustomerId" name="aCustomerId" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2" >
                     <button type="submit" class="btn btn-primary btn-custom" style="margin-top: 32px;">Apply Filters</button>
                 </div>
                 <!-- Refresh Button -->
-                <div class="col-md-2 btn-refresh">
+                <div class="col-md-2 btn-refresh" >
                     <a href="@Url.Action("GetCustomers")" class="btn btn-info btn-custom" style="margin-top: 32px;">Refresh</a>
                 </div>
-
+                
             </div>
         </form>
 
@@ -115,7 +115,7 @@
                 </thead>
                 <tbody>
                     <!-- Rows of customer data -->
-                    @foreach (var c in ViewBag.ListOfCustomers)
+                    @foreach (var c in ViewBag.ListOfCustomerByFilter)
                     {
                         <tr>
                             <td>@c.CustomerId</td>
